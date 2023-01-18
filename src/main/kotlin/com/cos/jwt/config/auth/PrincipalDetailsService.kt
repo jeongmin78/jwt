@@ -15,7 +15,7 @@ class PrincipalDetailsService(
 
     @Throws(UsernameNotFoundException::class)
     override fun loadUserByUsername(username: String): UserDetails? {
-        println("username: $username")
+        println("PrincipalDetailsService의 loadUserByUsername()")
         val userEntity = userRepository.findByUsername(username)
         if (userEntity != null) {
             return PrincipalDetails(userEntity)
